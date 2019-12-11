@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./Css/Style.css"
+import Movies from "./components/Movies";
+import Search from "./components/Search";
+import AddFilms from "./components/AddFilms";
+import ListMovie from "./components/ListMovie";
+import Ratingmovies from "./components/SearchRate";
+import { connect } from "react-redux";
+import {BrowserRouter,Route,Switch} from "react-router-dom";
+import Details from "./components/Details"
 
-function App() {
+
+
+const App = props => {
+
+//  const filterStar = count => ({
+//     rate: count
+//   });
+
+console.log(props)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Search />
+      <Ratingmovies clicked={true}
+        // count={props.rating}
+        // filterStar={filterStar} 
+        />
+      <Switch>
+      
+      <Route  exact path="/" render={()=>
+      <>
+      <Movies
+        tableMovie={props.movie.filter(
+          el =>
+            el.name
+              .toLowerCase()
+              .includes(props.find.toLowerCase()) &&
+              el.rating >= props.rating
+        )}
+        />
+        <AddFilms />
+        </>}/>
+      <Route  path="/Details/:key" component={Details}/>
+      
+
+      
+      <ListMovie />
+      </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
-export default App;
+const MSTP = state => ({
+  movie: state.MovieList,
+  find: state.UserInput,
+  rating: state.rate
+});
+
+export default connect(MSTP)(App);

@@ -1,0 +1,82 @@
+.myFilms {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .image {
+    width: 150px;
+    height: 300px;
+  }
+  .search {
+    width: 600px !important;
+  }
+  .addButton {
+    width: 125px;
+    margin-left: 120px;
+    height: 52px;
+    margin-top: 70px;
+  }
+  .cards p {
+    text-align: center;
+    margin-left: 30px;
+    text-transform: capitalize;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-top: 10px;
+  }
+  .cards:hover {
+    cursor: pointer;
+    box-shadow: -1px 3px 10px 5px rgba(0, 0, 0, 75);
+    background-size: cover;
+    border: none;
+  }
+  .description {
+    margin-left: 70px;
+    margin-bottom: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+  }
+  .Edit-Remove {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    display: flex;
+    justify-content: space-around;
+  }
+  .input{
+      font-family: "Times New Roman", Times, serif;
+    
+  }
+  .Add{   font-family: "Times New Roman", Times, serif;
+    width: 150px;}
+  span{
+      font-family: "Times New Roman", Times, serif;
+    
+  }
+  .cards {
+    width: 260px;
+    height: 515px;
+    margin-top: 20px;
+    border: 1px solid black;
+    margin-bottom: 59px;
+    transition: all 0, 4s ease-in-out;
+    transition-timing-function: ease-out;
+  }
+  .cards img {
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 15px;
+  }
+  .movieName{
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+  }
+  .iframe{margin-left: 356px;
+    width: 633px;
+    height: 363px;
+    margin-top: 30px;}
+    .angle{
+      font-size: 69px;
+    }
